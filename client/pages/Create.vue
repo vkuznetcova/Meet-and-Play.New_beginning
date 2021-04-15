@@ -1,7 +1,7 @@
 <template>
   <section class="views-main">
-    <h2 class="views-main-title d-inline-block">Создать встречу</h2>
-    <button class="btn-search d-block" type="button">Найти игру</button>
+    <h2 class="views-main__title d-inline-block">Создать встречу</h2>
+    <button class="btn-search btn d-block" type="button">Найти игру</button>
     <div class="mt-16 w-8/12">
       <form class="grid grid-cols-2 gap-y-4 gap-x-8">
         <div class="relative">

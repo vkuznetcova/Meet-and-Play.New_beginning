@@ -3,22 +3,22 @@
     <i class="el-icon-delete"></i>
     <nuxt-link
       :to="to"
-      class="bottom-link flex items-center no-underline text-black hover:text-blue-530"
+      class="bottom-link flex items-center no-underline text-black"
       active-class="active-link"
       ><slot
     /></nuxt-link>
-  </li>  
+  </li>
 </template>
 
 <script>
 export default {
-  name: "NavBottom",
+  name: 'NavBottom',
   component: {},
   props: {
     to: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>

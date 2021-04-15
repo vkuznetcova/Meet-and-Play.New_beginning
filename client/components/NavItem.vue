@@ -2,7 +2,7 @@
   <li class="mt-5">
     <nuxt-link
       :to="to"
-      class="top-link flex items-center no-underline text-black hover:text-blue-530"
+      class="top-link flex items-center no-underline text-black"
       active-class="active-link"
       ><slot
     /></nuxt-link>
@@ -11,12 +11,12 @@
 
 <script>
 export default {
-  name: "NavItem",
+  name: 'NavItem',
   props: {
     to: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-};
+}
 </script>
