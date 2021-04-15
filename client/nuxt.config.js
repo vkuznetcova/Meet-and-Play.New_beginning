@@ -21,6 +21,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/axiosport.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,7 +40,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.NUXT_APP_BASE_URL,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
