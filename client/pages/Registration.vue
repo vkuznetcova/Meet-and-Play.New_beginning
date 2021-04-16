@@ -1,15 +1,14 @@
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+    class="modal modal-sign-up min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
   >
+    <span class="modal-close"></span>
     <div class="max-w-xl w-full space-y-8">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Регистрация
-        </h2>
+        <h2 class="modal-title mt-6 text-center text-3xl">Регистрация</h2>
       </div>
       Ошибки валидации
-      <form class="mt-6 space-y-6" @submit.prevent="onSubmit">
+      <form class="modal-form mt-6 space-y-6" @submit.prevent="onSubmit">
         <input type="hidden" name="remember" value="true" />
         <div class="flex flex-wrap justify-between">
           <div class="mt-4">
@@ -20,7 +19,7 @@
               type="name"
               autocomplete="name"
               required
-              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-gray-400 focus:z-10 sm:text-sm"
+              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border placeholder-gray-500 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Ваше имя"
             />
           </div>
@@ -32,7 +31,7 @@
               type="city"
               autocomplete="city"
               required
-              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-gray-400 focus:z-10 sm:text-sm"
+              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border placeholder-gray-500 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Город"
             />
           </div>
@@ -46,7 +45,7 @@
               type="email"
               autocomplete="email"
               required
-              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-gray-400 focus:z-10 sm:text-sm"
+              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border placeholder-gray-500 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Email"
             />
           </div>
@@ -58,7 +57,7 @@
               type="password"
               autocomplete="current-password"
               required
-              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-gray-400 focus:z-10 sm:text-sm"
+              class="appearance-none rounded-lg relative block w-64 h-12 px-3 py-2 border placeholder-gray-500 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:z-10 sm:text-sm"
               placeholder="Пароль"
             />
           </div>
@@ -66,16 +65,16 @@
         <div>
           <button
             type="submit"
-            class="group relative m-auto w-72 h-12 items-center flex justify-center py-2 px-4 border border-transparent text-lg font-medium rounded-md text-black bg-gray-380 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+            class="btn-fill group relative m-auto w-72 h-12 items-center flex justify-center py-2 px-4 border border-transparent text-lg font-medium rounded-md text-black focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
             Регистрация
           </button>
         </div>
       </form>
-      <span class="flex justify-center">Уже зарегистрированы?</span>
+      <span class="flex justify-center modal-msg">Уже зарегистрированы?</span>
       <router-link
         :to="{ name: 'login' }"
-        class="flex justify-center text-black font-bold hover:text-blue-410"
+        class="flex justify-center text-black font-bold modal-msg-link"
         >Войти</router-link
       >
     </div>
@@ -116,8 +115,8 @@ export default {
   name: 'Registration',
   methods: {
     onSubmit() {
-      console.log('Отправка формы');
-    }
-  }
+      console.log('Отправка формы')
+    },
+  },
 }
 </script>

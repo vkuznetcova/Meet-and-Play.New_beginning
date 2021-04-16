@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="side-bar_header items-center flex flex-col bg-gray-380 rounded-br-2xl"
-  >
+  <div class="side-bar_header items-center flex flex-col rounded-br-2xl">
     <h2 class="font-weight-bold">Meet & Play</h2>
     <div class="avatar">
       <img class="avatar-img" src="#" alt="avatar" />
@@ -18,7 +16,7 @@
 </template>
 
 <script>
-export default {  
+export default {
   component: {},
 }
 </script>
@@ -64,11 +62,11 @@ export default {
     margin: 32px 0 68px;
   }
 }
-.side-bar_navigation { 
+.side-bar_navigation {
   .top-link,
-  .bottom-link {    
+  .bottom-link {
     &::before {
-      content: "";
+      content: '';
       display: block;
       margin-right: 16px;
       width: 32px;
