@@ -34,9 +34,9 @@
 <script>
 export default {
   components: {
-    NavItem: () => import('@/components/NavItem'),
-    NavSideBar: () => import('@/components/NavSideBar'),
-    NavBottom: () => import('@/components/NavBottom'),
+    NavItem: () => import('./NavItem'),
+    NavSideBar: () => import('./NavSideBar'),
+    NavBottom: () => import('./NavBottom'),
   },
   props: {
     navItemMenu: {
