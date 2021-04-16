@@ -5,11 +5,13 @@
       <img class="avatar-img" src="#" alt="avatar" />
     </div>
     <div class="authorization-description text-center">
-      <span class="user-name"
-        >Константин <br />
-        Константинов</span
-      >
-      <span class="user-city d-block">Санкт-Петербург</span>
+      <template>
+        <span class="user-name"
+          >Константин <br />
+          Константинов</span
+        >
+        <span class="user-city d-block">Санкт-Петербург</span>
+      </template>
       <!-- <span class="user-authorization font-weight-bold">Вход&nbsp;/&nbsp;Регистрация</span> -->
     </div>
   </div>
@@ -20,7 +22,6 @@ export default {
   component: {},
 }
 </script>
-
 
 <style lang="scss">
 .side-bar_header {

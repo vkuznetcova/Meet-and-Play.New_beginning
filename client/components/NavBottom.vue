@@ -2,6 +2,7 @@
   <li class="mt-5">
     <i class="el-icon-delete"></i>
     <nuxt-link
+      no-prefetch
       :to="to"
       class="bottom-link flex items-center no-underline text-black"
       active-class="active-link"
