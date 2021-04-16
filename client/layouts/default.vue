@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto w-screen h-screen flex flex-row">
     <Nav :navItemMenu="navItemMenu" :navBottomMenu="navBottomMenu" />
-    <div class="flex h-screen flex-col flex-grow overflow-y-auto relative">
+    <div class="flex h-screen w-75 flex-col flex-grow overflow-y-auto relative">
       <Nuxt />
     </div>
   </div>

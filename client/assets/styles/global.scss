@@ -3,11 +3,18 @@
 @import "./variables.scss";
 @import "./loyout.scss";
 @import "./meetings.scss";
+@import "./card.scss";
 @import "./create_meeting.scss";
 @import "./registration_login.scss";
 @import "./settings.scss";
 @import "./support.scss";
 
+
+//////
+.w-75 {
+  width: 75%;
+}
+//////
 
 .views-main {
   padding: 32px;
