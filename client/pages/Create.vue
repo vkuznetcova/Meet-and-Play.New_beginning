@@ -5,20 +5,20 @@
     <div class="mt-16 w-8/12">
       <form class="grid grid-cols-2 gap-y-4 gap-x-8">
         <div class="relative">
-          <label for="name-with-label" class="text-gray-700">
+          <label for="name-with-name" class="text-gray-700">
             Название встречи
           </label>
           <input
             type="text"
-            id="name-with-label"
+            id="name-with-name"
             class="mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
         </div>
         <div class="relative">
-          <label for="name-with-label" class="text-gray-700"> Город </label>
+          <label for="name-with-city" class="text-gray-700"> Город </label>
           <input
             type="text"
-            id="name-with-label"
+            id="name-with-city"
             class="mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
         </div>
@@ -31,7 +31,7 @@
           />
         </div>
         <div class="relative">
-          <label for="name-with-label" class="text-gray-700">
+          <label for="name-with-sport" class="text-gray-700">
             <span class="text-gray-700">Спорт</span>
             <select
               class="form-select block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
@@ -56,22 +56,22 @@
       </form>
       <form class="mt-4 mb-8 text-center">
         <div class="relative inline-block mr-8">
-          <label for="name-with-label" class="text-gray-700">
+          <label for="name-with-ammount" class="text-gray-700">
             Количество <br />
             участников
           </label>
           <input
             type="text"
-            id="name-with-label"
+            id="name-with-ammount"
             class="block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-20 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
         </div>
         <div class="relative inline-block mr-8">
-          <label for="name-with-label" class="text-gray-700"> Дата </label>
+          <label for="data" class="text-gray-700"> Дата </label>
           <input
             type="data"
-            id="name-with-label"
-            class="block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-20 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+            id="data"
+            class="input_data block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
         </div>
         <div class="relative inline-block mr-8">
@@ -79,7 +79,7 @@
           <input
             type="time"
             id="time"
-            class="block mt-2 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent flex-1"
+            class="input_time block mt-2 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent flex-1"
           />
         </div>
       </form>
@@ -98,3 +98,12 @@ export default {
   name: 'Create',
 }
 </script>
+
+<style lang="scss">
+.input_data {
+  width: 200px;
+}
+.input_time {
+  width: 150px;
+}
+</style>

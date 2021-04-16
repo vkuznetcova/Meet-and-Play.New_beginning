@@ -79,9 +79,5 @@ export default {
   .bottom-list-link {
     margin-bottom: 40px;
   }
-
-  // .active-link {
-  //   color: $button-hover !important;
-  // }
 }
 </style>
