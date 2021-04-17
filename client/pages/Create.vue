@@ -3,7 +3,8 @@
     <h2 class="views-main__title d-inline-block">Создать встречу</h2>
     <button class="btn-search btn d-block" type="button">Найти игру</button>
     <div class="mt-16 w-8/12">
-      <form class="grid grid-cols-2 gap-y-4 gap-x-8">
+    <crud-form />
+      <!-- <form class="grid grid-cols-2 gap-y-4 gap-x-8">
         <div class="relative">
           <label for="name-with-name" class="text-gray-700">
             Название встречи
@@ -53,8 +54,22 @@
             </select>
           </label>
         </div>
-      </form>
-      <form class="mt-4 mb-8 text-center">
+        <div class="relative inline-block mr-8 pt-6">
+          <label for="data" class="text-gray-700"> Дата </label>
+          <input
+            type="data"
+            id="data"
+            class="input_data block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          />
+        </div>
+        <div class="relative inline-block mr-8 pt-6">
+          <label class="text-gray-700" for="time"> Время </label>
+          <input
+            type="time"
+            id="time"
+            class="input_time block mt-2 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent flex-1"
+          />
+        </div>
         <div class="relative inline-block mr-8">
           <label for="name-with-ammount" class="text-gray-700">
             Количество <br />
@@ -66,36 +81,23 @@
             class="block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-20 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
           />
         </div>
-        <div class="relative inline-block mr-8">
-          <label for="data" class="text-gray-700"> Дата </label>
-          <input
-            type="data"
-            id="data"
-            class="input_data block mt-2 rounded-lg border-transparent flex-1 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-          />
-        </div>
-        <div class="relative inline-block mr-8">
-          <label class="text-gray-700" for="time"> Время </label>
-          <input
-            type="time"
-            id="time"
-            class="input_time block mt-2 appearance-none border border-gray-300 py-2 px-4 bg-white text-gray-700 placeholder-gray-400 rounded-lg text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent flex-1"
-          />
-        </div>
       </form>
       <button
         type="button"
-        class="py-2 px-4 flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white text-center text-base shadow-md focus:outline-none rounded-lg"
+        class="mt-6 py-2 px-4 flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white text-center text-base shadow-md focus:outline-none rounded-lg"
       >
         Создать встречу
-      </button>
+      </button> -->
     </div>
   </section>
 </template>
 
 <script>
+import CrudForm from '../components/CrudForm.vue'
 export default {
-  name: 'Create',
+  components: {
+    CrudForm: () => import('@/components/CrudForm')
+  }
 }
 </script>
 
