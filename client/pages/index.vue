@@ -9,91 +9,36 @@
       <button class="btn-fill">Найти</button>
     </div>
     <div class="play-cards-header">Популярные игры</div>
-    <MeetingsForm :meetings="meetings" />
+    <MeetingsForm
+      v-for="(meeting, key) in meetings"
+      :key="`meetingForm-${key}`"
+      :meeting="meeting"
+    />
   </section>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   components: {
     FilterForm: () => import('@/components/FilterForm'),
     MeetingsForm: () => import('@/components/MeetingsForm'),
   },
-  data: () => ({
-    meetings: [
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-      {
-        key: '',
-        src: 'http://placehold.it/280x200',
-        name: 'Футбол',
-        age: '16',
-        date: '18.05.2021',
-        required_quantity: '20',
-        available_quantity: '15',
-      },
-    ],
+  computed: {
+    ...mapGetters({
+      meetings: 'meetings/items',
+    }),
+  },
+  methods: {
+    ...mapActions({
+      fethMeetings: 'meetings/fetchAll',
+    }),
+  },
+  mounted() {
+    this.fethMeetings()
+  },
+  data: () => ({    
     filter: [
       { key: '', name: 'Футбол' },
       { key: '', name: 'Волейбол' },

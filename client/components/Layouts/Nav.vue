@@ -4,7 +4,7 @@
     <nav
       class="side-bar_navigation flex flex-grow flex-col items-center font-medium text-base"
     >
-      <div>
+      <div class="w-4/6">
         <ul class="list-none mt-11">
           <nav-item
             v-for="(navItem, key) in navItemMenu"
@@ -34,9 +34,9 @@
 <script>
 export default {
   components: {
-    NavItem: () => import('@/components/NavItem'),
-    NavSideBar: () => import('@/components/NavSideBar'),
-    NavBottom: () => import('@/components/NavBottom'),
+    NavItem: () => import('./NavItem'),
+    NavSideBar: () => import('./NavSideBar'),
+    NavBottom: () => import('./NavBottom'),
   },
   props: {
     navItemMenu: {

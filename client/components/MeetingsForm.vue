@@ -1,9 +1,10 @@
 <template>
   <div class="play-cards-block">
-    <div
+    <template v-if="meetings">
+    <div    
       v-for="(meeting, key) in meetings"
       :key="`meeting-${key}`"
-      class="max-h-56 hover:cursor-pointer play-card"
+      class="max-h-56 hover:cursor-pointer play-card"      
     >
       <img class="block mb-2 rounded-2xl" :src="meeting.src" alt="play-card" />
       <div class="play-card__header">
@@ -18,14 +19,38 @@
       >
       <span class="inline-block float-right">{{ meeting.date }}</span>
     </div>
-  </div>
+    </template>
+    <template v-if="meeting">
+    <div    
+      v-for="(meet, key) in meeting"
+      :key="`meeting-${key}`"
+      class="max-h-56 hover:cursor-pointer play-card"      
+    >
+      <img class="block mb-2 rounded-2xl" :src="meet.image" alt="play-card" />
+      <div class="play-card__header">
+        <span class="inline-block font-bold meeting-name">{{
+          meet.title
+        }}</span>
+        <!-- <span class="inline-block font-bold">(до {{ meeting.age }} лет)</span> -->
+      </div>
+      <span class="inline-block"
+        >{{ meet.count }} из
+        21</span
+      >
+      <span class="inline-block float-right">{{ meet.date }}</span>
+    </div>
+    </template>
+  </div>  
 </template>
 
 <script>
 export default {
-  name: 'MeetingsForm',
   props: {
     meetings: {
+      type: Array,
+      default: () => [],
+    },
+    meeting: {
       type: Array,
       default: () => [],
     },
