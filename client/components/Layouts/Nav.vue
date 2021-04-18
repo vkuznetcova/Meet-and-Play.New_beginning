@@ -6,22 +6,26 @@
     >
       <div class="w-4/6">
         <ul class="list-none mt-11">
-          <nav-item
+          <NavItem
             v-for="(navItem, key) in navItemMenu"
             :to="navItem.to"
             :key="`navItem-${key}`"
           >
+            <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg"><path :d="navItem.svg" /></svg> 
             {{ navItem.name }}
-          </nav-item>
+          </NavItem>
         </ul>
         <ul class="list-none my-11">
-          <nav-bottom
+          <NavBottom
             v-for="(navBottom, key) in navBottomMenu"
             :to="navBottom.to"
             :key="`navBottom-${key}`"
           >
+            <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" >
+            <path :d="navBottom.svg1" :stroke-width="navBottom.svgST" />
+            <path :d="navBottom.svg" :stroke-width="navBottom.svgST" :fill="navBottom.fill" :stroke="navBottom.stroke" /></svg> 
             {{ navBottom.name }}
-          </nav-bottom>
+          </NavBottom>
         </ul>
       </div>
       <span class="mx-auto mt-auto mb-5 text-xs"
