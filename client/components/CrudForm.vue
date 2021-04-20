@@ -9,6 +9,14 @@
         @model-updated="onUpdate"
       />
       <button
+        v-if="meetingId"
+        type="submit"
+        class="ml-3.5 mt-6 py-2 px-4 flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white text-center text-base shadow-md focus:outline-none rounded-lg"
+      >
+        Редактировать встречу
+      </button>
+      <button
+        v-else
         type="submit"
         class="ml-3.5 mt-6 py-2 px-4 flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white text-center text-base shadow-md focus:outline-none rounded-lg"
       >
@@ -35,6 +43,11 @@ export default {
         validateAsync: true
       }),
     },
+  },
+  computed: {
+    meetingId() {
+      return this.$route.params.id;
+    }
   },
   methods: {
     async validate() {
