@@ -36,6 +36,10 @@ const schema = new Schema({
         type: String,
         default: '',
     },
+    user: {
+        type: ObjectId,
+        ref: "User",
+    },
 })
 
 module.exports = model('Meeting', schema)

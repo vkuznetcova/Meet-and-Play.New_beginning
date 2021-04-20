@@ -38,6 +38,14 @@ export const schema = {
     },
     {
       type: 'input',
+      inputType: 'text',
+      label: 'Картинка',
+      model: 'image',
+      id: "image",
+      styleClasses: 'mt-2 py-2 px-4',
+    },
+    {
+      type: 'input',
       inputType: 'data',
       label: 'Дата',
       model: 'date',

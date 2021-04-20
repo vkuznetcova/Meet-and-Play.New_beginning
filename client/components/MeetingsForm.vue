@@ -1,10 +1,10 @@
 <template>
   <div class="play-cards-block">
     <template v-if="meetings">
-    <nuxt-link to="/MyMeetingsCard"  
+      <nuxt-link to="/MyMeetingsCard"
       v-for="(meeting, key) in meetings"
       :key="`meeting-${key}`"
-      class="max-h-56 hover:cursor-pointer play-card"      
+      class="max-h-56 hover:cursor-pointer play-card"
     >
       <div class="play-card__favorite">
         <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg">
@@ -26,10 +26,10 @@
     </nuxt-link>
     </template>
     <template v-if="meeting">
-    <div    
+    <nuxt-link to="/MyMeetingsCard"
       v-for="(meet, key) in meeting"
       :key="`meeting-${key}`"
-      class="max-h-56 hover:cursor-pointer play-card"      
+      class="max-h-56 hover:cursor-pointer play-card"
     >
       <img class="block mb-2 rounded-2xl" :src="meet.image" alt="play-card" />
       <div class="play-card__header">
@@ -43,9 +43,9 @@
         21</span
       >
       <span class="inline-block float-right">{{ meet.date }}</span>
-    </div>
+    </nuxt-link>
     </template>
-  </div>  
+  </div>
 </template>
 
 <script>
