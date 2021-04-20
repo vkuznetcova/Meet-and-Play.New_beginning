@@ -4,7 +4,7 @@
       <vue-form-generator
         :schema="formSchema"
         :model="formModel"
-        :option="formOptions"
+        :options="formOptions"
         ref="form"
         @model-updated="onUpdate"
       />
@@ -23,13 +23,11 @@ export default {
   props: {
     formSchema: {
       type: Object,
-      default: () => {
-      },
+      default: () => {},
     },
     formModel: {
       type: Object,
-      default: () => {
-      },
+      default: () => {},
     },
     formOptions: {
       type: Object,
