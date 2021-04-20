@@ -2,10 +2,10 @@
   <section class="views-main">
     <h2 class="views-main__title d-inline-block">Выберите спортивную игру</h2>
     <div class="filter-block">
-      <FilterForm :filter="filter" />
+      <FilterForm :filter="filter"/>
     </div>
     <div class="search-block mb-6">
-      <input type="text" placeholder="Город" />
+      <input type="text" placeholder="Город"/>
       <button class="btn-fill">Найти</button>
     </div>
     <div class="play-cards-header">Популярные игры</div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
   components: {
@@ -32,21 +32,21 @@ export default {
   },
   methods: {
     ...mapActions({
-      fethMeetings: 'meetings/fetchAll',
+      fetсhMeetings: 'meetings/fetchAll',
     }),
   },
   mounted() {
-    this.fethMeetings()
+    this.fetсhMeetings()
   },
-  data: () => ({    
+  data: () => ({
     filter: [
-      { key: '', name: 'Футбол' },
-      { key: '', name: 'Волейбол' },
-      { key: '', name: 'Тенис' },
-      { key: '', name: 'Баскетбол' },
-      { key: '', name: 'Бег' },
-      { key: '', name: 'Хоккей' },
-      { key: '', name: 'Спортзал' },
+      {key: '', name: 'Футбол'},
+      {key: '', name: 'Волейбол'},
+      {key: '', name: 'Тенис'},
+      {key: '', name: 'Баскетбол'},
+      {key: '', name: 'Бег'},
+      {key: '', name: 'Хоккей'},
+      {key: '', name: 'Спортзал'},
     ],
   }),
 }

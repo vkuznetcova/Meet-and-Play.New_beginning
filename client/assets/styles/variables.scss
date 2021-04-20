@@ -78,8 +78,8 @@ button {
 input,
 select {
   outline: none;
-  width: 280px;
-  height: 50px;
+  //width: 280px;
+  //height: 50px;
   border: 1px solid $border;
   box-sizing: border-box;
   border-radius: 10px;
@@ -108,4 +108,13 @@ select {
   @include wrapper;
   margin: 0 auto;
   display: flex;
+}
+fieldset {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.field-wrap {
+  margin-top: 13px;
 }
