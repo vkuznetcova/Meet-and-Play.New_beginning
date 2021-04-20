@@ -7,7 +7,7 @@
       v-if="model"
       :form-schema="schema"
       :form-model="model"
-      @on-submit="onMeetigCreate"
+      @on-submit="onMeetCreate"
     />
     <p class="text-red-500">
       {{ error }}
@@ -109,11 +109,25 @@ export default {
   components: {
     CrudForm: () => import('~/components/CrudForm')
   },
+  computed: {
+    isUpdated: ({
+                  $route: {
+                    params: {id},
+                  },
+                }) => id !== undefined
+  },
   data: () => ({
     model: null,
     error: null,
     schema
   }),
+  mounted() {
+    if (this.isUpdated) {
+      //получим объект
+      return
+    }
+    this.setModel()
+  },
   methods: {
     ...mapActions({
       createMeeting: 'meetings/create'
@@ -124,13 +138,13 @@ export default {
         city: '',
         address: '',
         sportType: '',
+        image: '',
         count: 0,
         date: '',
         time: '',
       }
     },
-    async onMeetigCreate() {
-      console.log(this.model)
+    async onMeetCreate() {
       try {
         await this.createMeeting(this.model)
         this.$router.back()
@@ -139,10 +153,6 @@ export default {
       }
     },
   },
-  mounted() {
-    this.setModel()
-    this.onMeetigCreate()
-  }
 }
 </script>
 
