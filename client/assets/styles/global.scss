@@ -18,7 +18,22 @@
 
 .views-main {
   padding: 32px;
-
+  justify-content: space-between;
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__btn-back {
+    margin-right: 44px;
+    svg {
+      fill: none;
+      stroke:#272727;
+      stroke-width: 2.5px;
+    }
+    &:hover svg {
+      stroke: $link-color-hover;
+    }
+  }
   &__title {
     display: inline-block;
     font-size: 32px;

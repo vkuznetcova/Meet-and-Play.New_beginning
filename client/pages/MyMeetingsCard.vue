@@ -1,6 +1,13 @@
 <template>
-  <section class="views-main">
-    <h2 class="views-main__title d-inline-block">Моя встреча - Футбол</h2>
+  <section class="views-main flex flex-wrap">
+  <div class="views-main__head">
+    <nuxt-link to="/MyMeetings" class="views-main__btn-back">
+      <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg"> 
+      <path d="M28 12L18 22L28 32" />
+      </svg>
+    </nuxt-link>
+      <h2 class="views-main__title d-inline-block">Моя встреча - Футбол</h2>
+  </div>
     <button class="btn-search btn d-block" type="button">Найти игру</button>
     <div class="meetings-container">
       <div>
