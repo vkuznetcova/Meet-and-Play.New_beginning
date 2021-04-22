@@ -1,13 +1,14 @@
 <template>
   <section class="views-main">
-    <h2 class="views-main__title d-inline-block">Создать встречу</h2>
+    <h2 v-if="meetingId" class="views-main__title d-inline-block">Редактировать встречу</h2>
+    <h2 v-else class="views-main__title d-inline-block">Создать встречу</h2>
     <button class="btn-search btn d-block" type="button">Найти игру</button>
     <!--    <div class="mt-16 w-8/12">-->
     <crud-form
       v-if="model"
       :form-schema="schema"
       :form-model="model"
-      @on-submit="onMeetCreate"
+      @on-submit="onFormSubmit"
     />
     <p class="text-red-500">
       {{ error }}
@@ -101,7 +102,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex';
+import {mapActions, mapGetters} from 'vuex';
 
 import {schema} from "~/pages/create/fields";
 
@@ -110,27 +111,39 @@ export default {
     CrudForm: () => import('~/components/CrudForm')
   },
   computed: {
-    isUpdated: ({
+    ...mapGetters({
+      meeting: 'meetings/item',
+      error: 'meetings/itemError'
+    }),
+    isUpdating: ({
                   $route: {
                     params: {id},
                   },
-                }) => id !== undefined
+                }) => id !== undefined,
+    meetingId() {
+      return this.$route.params.id;
+    }
   },
   data: () => ({
     model: null,
-    error: null,
     schema
   }),
-  mounted() {
-    if (this.isUpdated) {
-      //получим объект
+  async mounted() {
+    if (this.isUpdating) {
+      await this.fetchMeeting(this.$route.params.id)
+      for (const item in this.meeting) {
+        this.model = {...this.meeting[item]}
+        // Переделать
+      }
       return
     }
     this.setModel()
   },
   methods: {
     ...mapActions({
-      createMeeting: 'meetings/create'
+      createMeeting: 'meetings/create',
+      fetchMeeting: 'meetings/fetchOne',
+      updateMeeting: 'meetings/update',
     }),
     setModel() {
       this.model = {
@@ -144,13 +157,20 @@ export default {
         time: '',
       }
     },
+    async onMeetUpdate() {
+      await this.updateMeeting({id: this.$route.params.id, payload: this.model})
+      this.$router.back()
+    },
     async onMeetCreate() {
-      try {
-        await this.createMeeting(this.model)
-        this.$router.back()
-      } catch (err) {
-        this.error = err
+      await this.createMeeting(this.model)
+      this.$router.back()
+    },
+    async onFormSubmit() {
+      if (this.isUpdating) {
+        this.onMeetUpdate()
+        return
       }
+      this.onMeetCreate()
     },
   },
 }
